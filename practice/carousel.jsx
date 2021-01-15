@@ -1,38 +1,51 @@
 import React, { Component } from "react";
+import "./carousel.css";
 
 class Carousel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: [
-        {
-          src:
-            "https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/jrfyzvgzvhs1iylduuhj.jpg",
-          alt: "Hong Kong",
-        },
-        {
-          src:
-            "https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/c1cklkyp6ms02tougufx.webp",
-          alt: "Singapore",
-        },
-        {
-          src:
-            "https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/e8fnw35p6zgusq218foj.webp",
-          alt: "Japan",
-        },
-      ],
+      activeIndex: 0,
     };
   }
+
+  currentSlide(index) {
+    this.setState({ activeIndex: index });
+  }
+
+  toPrevSlide(e) {
+    e.preventDefault();
+    let index = this.state.activeIndex;
+    let { slides } = this.props;
+    let slidesLength = slides.length;
+    if (index < 1) {
+      index = slidesLength;
+    }
+    --index;
+    this.setState({ activeIndex: index });
+  }
+
+  toNextSlide(e) {
+    e.preventDefault();
+    let index = this.state.activeIndex;
+    let { slides } = this.props;
+    let slidesLength = slides.length - 1;
+    if (index === slidesLength) {
+      index = -1;
+    }
+    ++index;
+    this.setState({ activeIndex: index });
+  }
+
   render() {
     return (
       <>
-        <h1>Carousel Component</h1>
         <Arrow direction="left" position="relative" left="-300px" top="200px" />
-        <div>
-          {this.state.images.map((img) => (
-            <div key={img.alt}>
-              <img src={img.src} alt={img.alt} />
-              <p className="legend">{img.alt}</p>
+        <div className="carousel-container">
+          {this.props.slides.map((slide) => (
+            <div key={slide.alt}>
+              <img src={slide.src} alt={slide.alt} />
+              <p className="legend">{slide.alt}</p>
             </div>
           ))}
         </div>
