@@ -1,4 +1,4 @@
-export const slidesData = [
+const slidesData = [
   {
     src:
       "https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/jrfyzvgzvhs1iylduuhj.jpg",
@@ -15,3 +15,4 @@ export const slidesData = [
     alt: "Japan",
   },
 ];
+export default slidesData;

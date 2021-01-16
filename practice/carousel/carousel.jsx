@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./carousel.css";
 
 class Carousel extends Component {
   constructor(props) {
@@ -39,41 +38,44 @@ class Carousel extends Component {
 
   render() {
     return (
-      <>
-        <Arrow direction="left" position="relative" left="-300px" top="200px" />
-        <div className="carousel-container">
-          {this.props.slides.map((slide) => (
-            <div key={slide.alt}>
-              <img src={slide.src} alt={slide.alt} />
-              <p className="legend">{slide.alt}</p>
-            </div>
-          ))}
-        </div>
+      <div>
+        <Arrow
+          direction="left"
+          onclick={(e) => this.toPrevSlide(e)}
+          style={{
+            position: "absolute",
+            top: "195px",
+            left: "360px",
+            cursor: "pointer",
+          }}
+        />
+        <img src={this.props.slides[this.state.activeIndex].src} />
+        <p>{this.props.slides[this.state.activeIndex].alt}</p>
         <Arrow
           direction="right"
-          position="relative"
-          right="-300px"
-          top="120px"
+          onclick={(e) => this.toNextSlide(e)}
+          style={{
+            position: "absolute",
+            top: "200px",
+            right: "370px",
+            cursor: "pointer",
+          }}
         />
-      </>
+      </div>
     );
   }
 }
 
 export default Carousel;
 
-const Arrow = ({ direction, position, left, right, top }) => {
+const Arrow = ({ direction, onclick, style }) => {
   return (
     <div>
       <i
         className={`fas fa-arrow-alt-circle-${direction}`}
-        style={{
-          position: `${position}`,
-          left: `${left}`,
-          top: `${top}`,
-          right: `${right}`,
-        }}
-      ></i>
+        style={style}
+        onClick={onclick}
+      />
     </div>
   );
 };
