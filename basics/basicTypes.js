@@ -8,7 +8,7 @@ if (b <= 20) {
     var c = b - 5;
     console.log(c);
 }
-console.log(c); //error:as it is limited to block scope
+// console.log(c); //error:as it is limited to block scope
 var isWorking = false;
 //type not assigned
 var helloWorld = "Hello world";
@@ -44,3 +44,31 @@ console.log(tuple[0], tuple[2]);
 console.log(tuple);
 tuple = []; //clearing
 console.log(tuple);
+//numeric enum
+var direction;
+(function (direction) {
+    direction[direction["up"] = 0] = "up";
+    direction[direction["down"] = 1] = "down";
+    direction[direction["left"] = 2] = "left";
+    direction[direction["right"] = 3] = "right";
+})(direction || (direction = {}));
+console.log(direction);
+//str enum
+var Names;
+(function (Names) {
+    Names["name1"] = "jack";
+    Names["name2"] = "jill";
+})(Names || (Names = {}));
+console.log(Names);
+//heterogeneous enum-both str,num
+var info;
+(function (info) {
+    info["name"] = "js";
+    info[info["age"] = 24] = "age";
+    // isEating = false, //will get error:enum will not support boolean type
+})(info || (info = {}));
+function getInfo(n) {
+    console.log(n);
+}
+getInfo(info.name);
+getInfo(info.age);
