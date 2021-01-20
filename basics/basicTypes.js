@@ -47,10 +47,10 @@ console.log(tuple);
 //numeric enum
 var direction;
 (function (direction) {
-    direction[direction["up"] = 0] = "up";
-    direction[direction["down"] = 1] = "down";
-    direction[direction["left"] = 2] = "left";
-    direction[direction["right"] = 3] = "right";
+    direction[direction["up"] = 4] = "up";
+    direction[direction["down"] = 5] = "down";
+    direction[direction["left"] = 5] = "left";
+    direction[direction["right"] = 6] = "right";
 })(direction || (direction = {}));
 console.log(direction);
 //str enum
@@ -59,6 +59,7 @@ var Names;
     Names["name1"] = "jack";
     Names["name2"] = "jill";
 })(Names || (Names = {}));
+console.log(Names.name1);
 console.log(Names);
 //heterogeneous enum-both str,num
 var info;
@@ -70,5 +71,6 @@ var info;
 function getInfo(n) {
     console.log(n);
 }
+console.log(info);
 getInfo(info.name);
 getInfo(info.age);

@@ -61,9 +61,9 @@ console.log(tuple);
 
 //numeric enum
 enum direction {
-  up,
+  up = 4,
   down,
-  left,
+  left = 5,
   right,
 }
 console.log(direction);
@@ -73,6 +73,7 @@ enum Names {
   name1 = "jack",
   name2 = "jill",
 }
+console.log(Names.name1);
 console.log(Names);
 
 //heterogeneous enum-both str,num
@@ -84,5 +85,6 @@ enum info {
 function getInfo(n: info) {
   console.log(n);
 }
+console.log(info);
 getInfo(info.name);
 getInfo(info.age);
