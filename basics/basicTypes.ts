@@ -88,3 +88,4 @@ function getInfo(n: info) {
 console.log(info);
 getInfo(info.name);
 getInfo(info.age);
+

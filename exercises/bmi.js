@@ -1,3 +1,4 @@
+"use strict";
 // enum values {
 //   weight = 56,
 //   height = 6,

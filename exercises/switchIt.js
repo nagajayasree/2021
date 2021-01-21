@@ -1,3 +1,4 @@
+"use strict";
 function switchIt(num) {
     switch (num) {
         case 1:

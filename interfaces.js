@@ -1,3 +1,4 @@
+"use strict";
 function printName(fullName) {
     console.log(fullName.firstname, fullName.lastname);
 }

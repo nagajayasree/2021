@@ -1,3 +1,4 @@
+"use strict";
 function removeSpaces(str) {
     console.log(str.replace(/\s/g, ""));
     return str.replace(/\s/g, "");

@@ -1,3 +1,4 @@
+"use strict";
 function setAlarm(params) {
     if (params.employed == true && params.vacation == false) {
         console.log(true);

@@ -1,3 +1,4 @@
+"use strict";
 function oppNum(num) {
     var n = num > 0 ? -Math.abs(num) : Math.abs(num);
     console.log(n);
