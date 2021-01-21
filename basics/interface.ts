@@ -4,7 +4,7 @@ interface Person {
 }
 
 function printName(person: Person) {
-  console.log(person.name);
+  console.log(person.name, person.age);
 }
 
 printName({ name: "jay" });
