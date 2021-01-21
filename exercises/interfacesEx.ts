@@ -31,3 +31,33 @@ let getBookInfo = (info: Book) => {
   console.log(newBook);
 };
 getBookInfo({ pages: 56, color: "green" });
+
+interface places {
+  readonly x: string;
+  readonly y: string;
+}
+
+let cities: places = { x: "NJ", y: "NY" };
+// cities.x = "hyd"; //cannot change value
+
+interface IntStudent {
+  name: string;
+  marks: number;
+  getMarks?(marks: number): number;
+}
+
+class StudentInfo implements IntStudent {
+  name: string;
+  marks: number;
+  constructor(name: string, marks: number) {
+    this.name = name;
+    this.marks = marks;
+  }
+  printMarks(marks: number): number {
+    return marks;
+  }
+}
+
+let std = new StudentInfo("js", 567);
+console.log(std);
+console.log(std.printMarks(45));

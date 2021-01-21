@@ -20,3 +20,17 @@ var getBookInfo = function (info) {
     console.log(newBook);
 };
 getBookInfo({ pages: 56, color: "green" });
+var cities = { x: "NJ", y: "NY" };
+var StudentInfo = /** @class */ (function () {
+    function StudentInfo(name, marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+    StudentInfo.prototype.printMarks = function (marks) {
+        return marks;
+    };
+    return StudentInfo;
+}());
+var std = new StudentInfo("js", 567);
+console.log(std);
+console.log(std.printMarks(45));
