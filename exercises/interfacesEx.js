@@ -1,3 +1,8 @@
+var myMsg = { text: "hi", time: "1hr ago" };
+function printMsg(msgParam) {
+    console.log(msgParam.text);
+}
+printMsg(myMsg);
 var getName = function (player) {
     console.log(player.firstname + " " + player.lastname);
 };

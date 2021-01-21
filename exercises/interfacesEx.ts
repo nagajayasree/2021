@@ -1,3 +1,9 @@
+let myMsg = { text: "hi", time: "1hr ago" };
+function printMsg(msgParam: { text: string; time: string }) {
+  console.log(msgParam.text);
+}
+printMsg(myMsg);
+
 interface Player {
   firstname?: string;
   lastname?: string;
