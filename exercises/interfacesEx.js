@@ -34,3 +34,7 @@ var StudentInfo = /** @class */ (function () {
 var std = new StudentInfo("js", 567);
 console.log(std);
 console.log(std.printMarks(45));
+function playerFullName(player) {
+    return "fullName is " + player.name.firstname + " " + player.name.lastname;
+}
+console.log(playerFullName({ name: { firstname: "dfsdf", lastname: "fwvfvf" } }));

@@ -61,3 +61,20 @@ class StudentInfo implements IntStudent {
 let std = new StudentInfo("js", 567);
 console.log(std);
 console.log(std.printMarks(45));
+
+interface IPlayerName {
+  firstname: string;
+  lastname: string;
+}
+interface IPlayer {
+  name: IPlayerName;
+  age?: number;
+}
+
+function playerFullName(player: IPlayer) {
+  return `fullName is ${player.name.firstname} ${player.name.lastname}`;
+}
+
+console.log(
+  playerFullName({ name: { firstname: "dfsdf", lastname: "fwvfvf" } })
+);
