@@ -89,3 +89,30 @@ console.log(info);
 getInfo(info.name);
 getInfo(info.age);
 
+let fruit = "apple";
+// it takes fruit as string,
+// and can be changed into type string only
+fruit = "mango";
+// fruit = 8; //error
+
+const thing = "mobile"; //it takes thing as mobile,can't be changed
+
+//union type
+let value: string | number;
+value = 35;
+console.log(`value assigned is ${value}`);
+value = "string";
+console.log(`value assigned is ${value}`);
+
+function get(name: string | string[]) {
+  if (typeof name === "string") {
+    console.log(name);
+  } else {
+    for (let i = 0; i < name.length; i++) {
+      console.log(name[i]);
+    }
+  }
+}
+
+get("name");
+get(["name1", "name2", "name3"]);
