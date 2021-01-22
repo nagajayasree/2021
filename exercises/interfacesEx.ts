@@ -4,11 +4,11 @@ function printMsg(msgParam: { text: string; time: string }) {
 }
 printMsg(myMsg);
 
-interface Player {
+interface IntPlayer {
   firstname?: string;
   lastname?: string;
 }
-let getName = (player: Player) => {
+let getName = (player: IntPlayer) => {
   console.log(`${player.firstname} ${player.lastname}`);
 };
 getName({ firstname: "dhgjf", lastname: "vjdjqv" });
