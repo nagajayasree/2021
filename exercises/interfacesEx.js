@@ -38,3 +38,7 @@ function playerFullName(player) {
     return "fullName is " + player.name.firstname + " " + player.name.lastname;
 }
 console.log(playerFullName({ name: { firstname: "dfsdf", lastname: "fwvfvf" } }));
+function PersonalDetails(driver) {
+    return driver.personalInfo;
+}
+console.log(PersonalDetails({ personalInfo: { name: "ravi", age: 32 } }));

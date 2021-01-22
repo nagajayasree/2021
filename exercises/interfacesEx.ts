@@ -36,7 +36,6 @@ interface places {
   readonly x: string;
   readonly y: string;
 }
-
 let cities: places = { x: "NJ", y: "NY" };
 // cities.x = "hyd"; //cannot change value
 
@@ -45,7 +44,6 @@ interface IntStudent {
   marks: number;
   getMarks?(marks: number): number;
 }
-
 class StudentInfo implements IntStudent {
   name: string;
   marks: number;
@@ -57,7 +55,6 @@ class StudentInfo implements IntStudent {
     return marks;
   }
 }
-
 let std = new StudentInfo("js", 567);
 console.log(std);
 console.log(std.printMarks(45));
@@ -70,11 +67,22 @@ interface IPlayer {
   name: IPlayerName;
   age?: number;
 }
-
 function playerFullName(player: IPlayer) {
   return `fullName is ${player.name.firstname} ${player.name.lastname}`;
 }
-
 console.log(
   playerFullName({ name: { firstname: "dfsdf", lastname: "fwvfvf" } })
 );
+
+interface DriverDetails {
+  name: string;
+  age: number;
+}
+interface Driver {
+  personalInfo: DriverDetails;
+  company?: string;
+}
+function PersonalDetails(driver: Driver): DriverDetails {
+  return driver.personalInfo;
+}
+console.log(PersonalDetails({ personalInfo: { name: "ravi", age: 32 } }));
