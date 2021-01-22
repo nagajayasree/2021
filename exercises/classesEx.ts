@@ -31,6 +31,6 @@ class Player {
   }
 }
 
-let p1 = new Player("Virat", true, 30);
+let p1 = new Player("Virat", true);
 console.log(p1.getPlayerName());
 console.log(p1.isPlaying);
