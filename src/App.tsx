@@ -10,7 +10,7 @@ function App() {
       <Home name="XYZ" place="Place">
         My Home
       </Home>
-      <MyComponent name="name" />
+      <MyComponent name="name">MyComponent</MyComponent>
     </div>
   );
 }

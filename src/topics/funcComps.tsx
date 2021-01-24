@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactElement } from "react";
+import { FunctionComponent, ReactElement, PropsWithChildren } from "react";
 
 type pet = {
   name: string;
@@ -50,6 +50,15 @@ export const Home: React.FC<HomeProps> = ({ name, place, children }) => (
 );
 
 type Name = { name: string };
-export function MyComponent({ name }: Name): React.ReactElement {
-  return <p>Hello {name}</p>;
+export function MyComponent({
+  name,
+  children,
+}: //here,it is accepting children prop only in the presence of PropsWithChildren,
+//otherwise it's showing error
+PropsWithChildren<Name>): React.ReactElement {
+  return (
+    <p>
+      {children}, Hello {name}
+    </p>
+  );
 }
