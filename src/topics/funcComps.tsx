@@ -1,6 +1,13 @@
 import { FunctionComponent } from "react";
 
-export type NameProps = { firstName: string; lastName: string };
+type pet = {
+  name: string;
+};
+export const Pet = ({ name }: pet) => {
+  return <div>My pet name is {name}</div>;
+};
+
+export type NameProps = { firstName: string; lastName?: string };
 export const Name = ({ firstName, lastName }: NameProps) => (
   <div>
     <p>
@@ -11,12 +18,11 @@ export const Name = ({ firstName, lastName }: NameProps) => (
 
 export interface ICar {
   name: string;
-  color: string;
+  color?: string;
 }
 export const Car: FunctionComponent<ICar> = ({ name, color }) => (
   <div>
-    <p>
-      Car Name : {name},Color: {color}
-    </p>
+    Name:{name},
+    {color == undefined ? <p>Color:No color</p> : <p>Color:{color}</p>}
   </div>
 );

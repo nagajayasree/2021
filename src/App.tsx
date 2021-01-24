@@ -1,11 +1,12 @@
 import "./App.css";
-import { Name, Car } from "./topics/funcComps";
+import { Name, Car, Pet } from "./topics/funcComps";
 
 function App() {
   return (
     <div className="App">
-      <Name firstName="FirstName" lastName="LastName" />
-      <Car name="Alto" color="White" />
+      <Name firstName="FirstName" />
+      <Car name="Alto" />
+      <Pet name="browny" />
     </div>
   );
 }
