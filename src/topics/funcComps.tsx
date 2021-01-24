@@ -22,7 +22,8 @@ export interface ICar {
 }
 export const Car: FunctionComponent<ICar> = ({ name, color }) => (
   <div>
-    Name:{name},
-    {color == undefined ? <p>Color:No color</p> : <p>Color:{color}</p>}
+    <h3>Car Info</h3>
+    <p>Name:{name}</p>
+    {color == undefined ? <p>{""}</p> : <p>Color:{color}</p>}
   </div>
 );
