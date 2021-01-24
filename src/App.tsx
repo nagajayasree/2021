@@ -1,5 +1,5 @@
 import "./App.css";
-import { Name, Car, Pet, Home } from "./topics/funcComps";
+import { Name, Car, Pet, Home, MyComponent } from "./topics/funcComps";
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <Home name="XYZ" place="Place">
         My Home
       </Home>
+      <MyComponent name="name" />
     </div>
   );
 }

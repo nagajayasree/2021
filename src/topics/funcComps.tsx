@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, ReactElement } from "react";
 
 type pet = {
   name: string;
@@ -22,11 +22,15 @@ export const Name = ({ firstName, lastName, children }: NameProps) => (
   </div>
 );
 
-export interface ICar {
+interface ICar {
   name: string;
   color?: string;
 }
-export const Car: FunctionComponent<ICar> = ({ name, color, children }) => (
+export const Car: React.FunctionComponent<ICar> = ({
+  name,
+  color,
+  children,
+}) => (
   <div>
     <h3>{children}</h3>
     <p>Name:{name}</p>
@@ -44,3 +48,8 @@ export const Home: React.FC<HomeProps> = ({ name, place, children }) => (
     {name},{place}
   </div>
 );
+
+type Name = { name: string };
+export function MyComponent({ name }: Name): React.ReactElement {
+  return <p>Hello {name}</p>;
+}
