@@ -68,11 +68,9 @@ console.log(car.name);
 type Name = {
   name: string;
 };
-
 type Age = {
   age: number;
 };
-
 type Person = Name & Age;
 // let person = ({ name, age }: Person): any => console.log(name, age);
 class person implements Person {
