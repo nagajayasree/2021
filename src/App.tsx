@@ -1,6 +1,8 @@
 import "./App.css";
 import { Car, Home, Name, Pet, MyComponent, MyName } from "./topics/funcComps";
 import { Counter, GetName, Status, ToggleButton } from "./topics/useStateHook";
+import { ReducerCounter } from "./topics/useReducerHook";
+import { Delay } from "./topics/useEffectHook";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
       <ToggleButton button={true} />
       <GetName name="njs" />
       <Counter value={0}>Counter</Counter>
+      <ReducerCounter />
+      <Delay msg={`Hello Hooks`} timeInMs={5000} />
     </div>
   );
 }
