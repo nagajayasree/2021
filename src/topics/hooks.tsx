@@ -1,5 +1,6 @@
 import * as React from "react";
 
+//useState
 export const Status: React.FunctionComponent<{ isActive: boolean }> = ({
   isActive,
 }) => {
@@ -38,6 +39,19 @@ export const GetName = ({ name }: NameProp) => {
       <p>
         <button onClick={() => getName(name)}>GetName</button>
       </p>
+    </div>
+  );
+};
+
+export const Counter: React.FunctionComponent<{ value: number }> = ({
+  value,
+}) => {
+  const [count, setCount] = React.useState(value);
+  return (
+    <div>
+      Count:{count}
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
     </div>
   );
 };
