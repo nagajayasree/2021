@@ -1,6 +1,6 @@
 import "./App.css";
 import { Car, Home, Name, Pet, MyComponent, MyName } from "./topics/funcComps";
-import { GetName, Status, ToggleButton } from "./topics/hooks";
+import { Counter, GetName, Status, ToggleButton } from "./topics/useStateHook";
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
       <Status isActive={false} />
       <ToggleButton button={true} />
       <GetName name="njs" />
+      <Counter value={0}>Counter</Counter>
     </div>
   );
 }

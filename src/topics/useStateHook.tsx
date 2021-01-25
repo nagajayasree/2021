@@ -43,15 +43,22 @@ export const GetName = ({ name }: NameProp) => {
   );
 };
 
-export const Counter: React.FunctionComponent<{ value: number }> = ({
+interface CounterProp {
+  value: number;
+}
+export const Counter: React.FunctionComponent<CounterProp> = ({
   value,
+  children,
 }) => {
   const [count, setCount] = React.useState(value);
   return (
     <div>
+      <h3>{children}</h3>
       Count:{count}
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      <p>
+        <button onClick={() => setCount(count + 1)}>Increment</button>
+        <button onClick={() => setCount(count - 1)}>Decrement</button>
+      </p>
     </div>
   );
 };
