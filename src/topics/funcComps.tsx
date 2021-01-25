@@ -7,7 +7,7 @@ export const Pet = ({ name }: pet) => {
   return <div>My pet name is {name}</div>;
 };
 
-export type NameProps = {
+type NameProps = {
   firstName: string;
   lastName?: string;
   children?: string; //without this prop type,children will not be displayed,throws error
@@ -22,7 +22,7 @@ export const Name = ({ firstName, lastName, children }: NameProps) => (
   </div>
 );
 
-interface ICar {
+export interface ICar {
   name: string;
   color?: string;
 }
@@ -38,7 +38,7 @@ export const Car: React.FunctionComponent<ICar> = ({
   </div>
 );
 
-type HomeProps = {
+export type HomeProps = {
   name: string;
   place: string;
 };
@@ -62,3 +62,9 @@ PropsWithChildren<Name>): React.ReactElement {
     </p>
   );
 }
+
+export function MyName(): React.ReactElement {
+  return <h1>NJS</h1>;
+}
+
+// export default { Name, Car, Pet, Home, MyName, MyComponent };
