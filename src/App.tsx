@@ -4,7 +4,7 @@ import { Counter, GetName, Status, ToggleButton } from "./topics/useStateHook";
 import { ReducerCounter } from "./topics/useReducerHook";
 import { Delay } from "./topics/useEffectHook";
 import { MsgComp } from "./topics/classComps";
-
+import Time from "./topics/classComps";
 function App() {
   return (
     <div className="App">
@@ -23,6 +23,7 @@ function App() {
       <ReducerCounter />
       <Delay msg={`Hello Hooks`} timeInMs={5000} />
       <MsgComp title={"Send Message"} />
+      <Time />
     </div>
   );
 }

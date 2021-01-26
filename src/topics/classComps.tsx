@@ -25,3 +25,31 @@ export class MsgComp extends React.Component<CompProps, CompState> {
     );
   }
 }
+
+export interface TimeState {
+  time: Date;
+}
+
+class Time extends React.Component<{}, TimeState> {
+  setTime = () => {
+    this.setState({
+      time: new Date(),
+    });
+  };
+
+  componentWillMount() {
+    this.setTime();
+  }
+
+  componentDidMount() {
+    setInterval(() => this.setTime(), 1000);
+  }
+
+  render() {
+    return (
+      <div>The current time is {this.state.time.toLocaleTimeString()}</div>
+    );
+  }
+}
+
+export default Time;
