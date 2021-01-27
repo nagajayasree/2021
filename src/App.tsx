@@ -5,6 +5,8 @@ import { ReducerCounter } from "./topics/useReducerHook";
 import { Delay } from "./topics/useEffectHook";
 import { MsgComp } from "./topics/classComps";
 import Time from "./topics/classComps";
+import { Age, DefaultName, Greet, Msg, MyFruit } from "./topics/defaultProps";
+import { Form, SubmitButton } from "./topics/formEvents";
 function App() {
   return (
     <div className="App">
@@ -24,6 +26,13 @@ function App() {
       <Delay msg={`Hello Hooks`} timeInMs={5000} />
       <MsgComp title={"Send Message"} />
       <Time />
+      <Msg />
+      <Greet />
+      <DefaultName />
+      <Age />
+      <MyFruit />
+      <Form />
+      <SubmitButton btnName={"Submit"} />
     </div>
   );
 }
