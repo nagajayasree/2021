@@ -11,6 +11,7 @@ import { SumOfArrNum } from "./exercises/sumofArrayNums";
 import { GetPositiveNums } from "./exercises/positiveNumbers";
 import { GetMaxNum } from "./exercises/getMaxNum";
 import { Capitalize } from "./exercises/capitialize";
+import { Animal } from "./exercises/animal";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
       <GetPositiveNums inputArr={[-18, 73, 45, -64]} />
       <GetMaxNum inputArr={[32, 45, 61, 100, 10, 89]} />
       <Capitalize inputStr={"typescript"} />
+      <Animal name={"puppy"} age={5} legs={4} status={"barking"} />
     </div>
   );
 }
