@@ -7,10 +7,15 @@ import { MsgComp } from "./topics/classComps";
 import Time from "./topics/classComps";
 import { Age, DefaultName, Greet, Msg, MyFruit } from "./topics/defaultProps";
 import { Form, SubmitButton } from "./topics/formEvents";
+import { SumOfArrNum } from "./exercises/sumofArrayNums";
+import { GetPositiveNums } from "./exercises/positiveNumbers";
+import { GetMaxNum } from "./exercises/getMaxNum";
+import { Capitalize } from "./exercises/capitialize";
+
 function App() {
   return (
     <div className="App">
-      <Name firstName="FirstName">Get Name</Name>
+      {/* <Name firstName="FirstName">Get Name</Name>
       <Car name="Alto">Car Details</Car>
       <Pet name="browny" />
       <Home name="XYZ" place="Place">
@@ -32,7 +37,11 @@ function App() {
       <Age />
       <MyFruit />
       <Form />
-      <SubmitButton btnName={"Submit"} />
+      <SubmitButton btnName={"Submit"} /> */}
+      <SumOfArrNum inputArr={[1, 2, 3, 14]} />
+      <GetPositiveNums inputArr={[-18, 73, 45, -64]} />
+      <GetMaxNum inputArr={[32, 45, 61, 100, 10, 89]} />
+      <Capitalize inputStr={"typescript"} />
     </div>
   );
 }

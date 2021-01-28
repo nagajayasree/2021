@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactElement, PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 
 type pet = {
   name: string;
