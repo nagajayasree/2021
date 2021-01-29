@@ -12,6 +12,9 @@ import { GetPositiveNums } from "./exercises/positiveNumbers";
 import { GetMaxNum } from "./exercises/getMaxNum";
 import { Capitalize } from "./exercises/capitialize";
 import { Animal } from "./exercises/animal";
+import { CheckPalindrome } from "./exercises/palindrome";
+import { GetUserName, User } from "./topics/context";
+import { Student, Book, Book2 } from "./topics/context2";
 
 function App() {
   return (
@@ -44,6 +47,13 @@ function App() {
       <GetMaxNum inputArr={[32, 45, 61, 100, 10, 89]} />
       <Capitalize inputStr={"typescript"} />
       <Animal name={"puppy"} age={5} legs={4} status={"barking"} />
+      <CheckPalindrome inputStr={"madam"} />
+      <CheckPalindrome inputStr={"window"} />
+      <User />
+      <GetUserName />
+      <Student />
+      <Book />
+      <Book2 />
     </div>
   );
 }
