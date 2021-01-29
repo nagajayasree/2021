@@ -15,6 +15,7 @@ import { Animal } from "./exercises/animal";
 import { CheckPalindrome } from "./exercises/palindrome";
 import { GetUserName, User } from "./topics/context";
 import { Student, Book, Book2 } from "./topics/context2";
+import { Person, Person2, PersonProps } from "./topics/context3";
 
 function App() {
   return (
@@ -54,6 +55,9 @@ function App() {
       <Student />
       <Book />
       <Book2 />
+      <Person />
+      <Person2 />
+      <PersonProps name={"nameProp"} age={28} place={"placeProp"} />
     </div>
   );
 }
