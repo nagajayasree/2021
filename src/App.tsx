@@ -16,6 +16,8 @@ import { CheckPalindrome } from "./exercises/palindrome";
 import { GetUserName, User } from "./topics/context";
 import { Student, Book, Book2 } from "./topics/context2";
 import { Person, Person2, PersonProps } from "./topics/context3";
+import { GetPrimes } from "./exercises/primeNumbers";
+import { Input, FancyButton } from "./topics/forwardRef";
 
 function App() {
   return (
@@ -58,6 +60,9 @@ function App() {
       <Person />
       <Person2 />
       <PersonProps name={"nameProp"} age={28} place={"placeProp"} />
+      <GetPrimes inputArr={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} />
+      <FancyButton type={"button"}>Ref Button</FancyButton>
+      <Input />
     </div>
   );
 }
