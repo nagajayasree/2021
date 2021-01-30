@@ -18,6 +18,7 @@ import { Student, Book, Book2 } from "./topics/context2";
 import { Person, Person2, PersonProps } from "./topics/context3";
 import { GetPrimes } from "./exercises/primeNumbers";
 import { Input, FancyButton } from "./topics/forwardRef";
+import { CapEachWord } from "./exercises/capEachWord";
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
       <GetPrimes inputArr={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} />
       <FancyButton type={"button"}>Ref Button</FancyButton>
       <Input />
+      <CapEachWord str={"hello world"} />
     </div>
   );
 }
