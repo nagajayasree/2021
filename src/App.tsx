@@ -19,6 +19,9 @@ import { Person, Person2, PersonProps } from "./topics/context3";
 import { GetPrimes } from "./exercises/primeNumbers";
 import { Input, FancyButton } from "./topics/forwardRef";
 import { CapEachWord } from "./exercises/capEachWord";
+import { AdjElemProd } from "./exercises/adjElemProd";
+import { Modal, PortalButton } from "./topics/portal";
+import { PopUp } from "./exercises/popUp";
 
 function App() {
   return (
@@ -65,6 +68,10 @@ function App() {
       <FancyButton type={"button"}>Ref Button</FancyButton>
       <Input />
       <CapEachWord str={"hello world"} />
+      <AdjElemProd inputArr={[1, 2, -8, 3, 4]} />
+      <Modal>Portal</Modal>
+      <PortalButton>Button in modalRoot</PortalButton>
+      <PopUp />
     </div>
   );
 }
