@@ -1,21 +1,23 @@
 import * as React from "react";
-import { UContext } from "./context";
+import { UContext, UserInterface } from "./context";
 import { Input } from "./Input";
+import { Button } from "./Button";
 
-export const User = () => {
+export const User = ({ name, id, password }: UserInterface) => {
   const userCtxt = React.useContext(UContext);
-  const [name, setName] = React.useState(userCtxt?.name);
-  const [id, setId] = React.useState(userCtxt?.id);
-  const [password, setPassword] = React.useState(userCtxt?.password);
+  const [userName, setName] = React.useState(userCtxt?.name);
+  const [userId, setId] = React.useState(userCtxt?.id);
+  const [userPassword, setPassword] = React.useState(userCtxt?.password);
+  const [status, setStatus] = React.useState("");
 
   return (
     <>
-      <p>Welcome {name}!</p>
+      <p>Welcome {userName}!</p>
       <div>
         <label htmlFor="userId" placeholder="Enter Id">
           User Id:
           <Input
-            value={id}
+            value={userId}
             type={"text"}
             onChange={(e: React.FormEvent<HTMLInputElement>) =>
               setId(e.currentTarget.value)
@@ -34,7 +36,7 @@ export const User = () => {
         <label htmlFor="pwd" placeholder="Enter Password">
           Password:
           <Input
-            value={password}
+            value={userPassword}
             type={"text"}
             onChange={(e) => setPassword(e.currentTarget.value)}
           />
@@ -47,10 +49,9 @@ export const User = () => {
           /> */}
         </label>
       </div>
-      <p>
-        <button>Login</button>
-      </p>
-      <p></p>
+      <div>
+        <Button type={"button"}>Log In</Button>
+      </div>
     </>
   );
 };
