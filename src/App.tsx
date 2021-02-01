@@ -22,6 +22,7 @@ import { CapEachWord } from "./exercises/capEachWord";
 import { AdjElemProd } from "./exercises/adjElemProd";
 import { Modal, PortalButton } from "./topics/portal";
 import { PopUp } from "./exercises/popUp";
+import { UserLogin } from "./practice/UserLogin";
 
 function App() {
   return (
@@ -49,7 +50,7 @@ function App() {
       <MyFruit />
       <Form />
       <SubmitButton btnName={"Submit"} /> */}
-      <SumOfArrNum inputArr={[1, 2, 3, 14]} />
+      {/* <SumOfArrNum inputArr={[1, 2, 3, 14]} />
       <GetPositiveNums inputArr={[-18, 73, 45, -64]} />
       <GetMaxNum inputArr={[32, 45, 61, 100, 10, 89]} />
       <Capitalize inputStr={"typescript"} />
@@ -71,7 +72,8 @@ function App() {
       <AdjElemProd inputArr={[1, 2, -8, 3, 4]} />
       <Modal>Portal</Modal>
       <PortalButton>Button in modalRoot</PortalButton>
-      <PopUp />
+      <PopUp /> */}
+      <UserLogin />
     </div>
   );
 }
