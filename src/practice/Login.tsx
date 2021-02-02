@@ -3,7 +3,7 @@ import { Button } from "./Button";
 import { Input } from "./Input";
 import { UContext } from "./context";
 
-export const LoginUI = () => {
+export const Login = () => {
   const userCtxt = React.useContext(UContext);
   const [userName, setName] = React.useState(userCtxt?.name);
   const [userId, setId] = React.useState(userCtxt?.id);

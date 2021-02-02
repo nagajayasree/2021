@@ -1,6 +1,6 @@
 import * as React from "react";
 import { UContext, UserInterface } from "./context";
-import { LoginUI } from "./LoginUI";
+import { Login } from "./Login";
 
 const UserInfo: UserInterface = {
   name: "",
@@ -30,7 +30,7 @@ export const Main = () => {
   return (
     <div>
       <UContext.Provider value={UserInfo}>
-        <LoginUI />
+        <Login />
       </UContext.Provider>
     </div>
   );
