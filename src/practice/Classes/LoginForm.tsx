@@ -1,8 +1,6 @@
 import { Component } from "react";
 import { Input } from "./Input";
 import { Button } from "../Hook/Button";
-import { userInfo } from "os";
-import { UserName } from "../../topics/context";
 
 type Props = {
   title: string;
@@ -21,13 +19,17 @@ export class LoginForm extends Component<Props, State> {
     password: "",
   };
 
-  private updateInp({ e }: { e: HTMLInputElement }) {
-    this.state.username = e.value;
-  }
+  //   private updateInp({ e }: { e: HTMLInputElement }) {
+  //     this.state.username = e.value;
+  //   }
 
-  //   onInpChange = (e: React.FormEvent<HTMLInputElement>) => {
-  //     this.setState({ [e.currentTarget.name]: e.currentTarget.value });
-  //   };
+  onNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ username: e.target.value });
+  };
+
+  onPwdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ password: e.target.value });
+  };
 
   //   handleChange(e) {
   //     this.setState({ username: e.currentTarget.value });
@@ -43,6 +45,10 @@ export class LoginForm extends Component<Props, State> {
     }
   };
 
+  onRefresh = () => {
+    this.setState({ username: "", password: "" });
+  };
+
   render() {
     return (
       <>
@@ -53,18 +59,23 @@ export class LoginForm extends Component<Props, State> {
             <Input
               value={this.state.username}
               name="username"
-              onChange={this.updateInp}
+              onChange={this.onNameChange}
             />
           </label>
         </div>
         <div>
           <label htmlFor="pswd">
             Password:
-            <Input value={this.state.password} name="password" />
+            <Input
+              value={this.state.password}
+              name="password"
+              onChange={this.onPwdChange}
+            />
           </label>
         </div>
         <div>
           <Button onClick={this.onBtnClick}>Log In</Button>
+          <Button onClick={this.onRefresh}>Refresh</Button>
         </div>
       </>
     );
