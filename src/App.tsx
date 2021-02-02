@@ -22,7 +22,8 @@ import { CapEachWord } from "./exercises/capEachWord";
 import { AdjElemProd } from "./exercises/adjElemProd";
 import { Modal, PortalButton } from "./topics/portal";
 import { PopUp } from "./exercises/popUp";
-import { Main } from "./practice/Main";
+import { Main } from "./practice/Hook/Main";
+import { LoginForm } from "./practice/Classes/LoginForm";
 
 function App() {
   return (
@@ -74,7 +75,8 @@ function App() {
       <PortalButton>Button in modalRoot</PortalButton>
       <PopUp /> */}
       {/* <UserLogin /> */}
-      <Main />
+      {/* <Main /> */}
+      <LoginForm title={"Login Page"} uname={"name"} pwd={"pwd"} />
     </div>
   );
 }
