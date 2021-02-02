@@ -22,7 +22,7 @@ import { CapEachWord } from "./exercises/capEachWord";
 import { AdjElemProd } from "./exercises/adjElemProd";
 import { Modal, PortalButton } from "./topics/portal";
 import { PopUp } from "./exercises/popUp";
-import { UserLogin } from "./practice/UserLogin";
+import { Main } from "./practice/Main";
 
 function App() {
   return (
@@ -73,7 +73,8 @@ function App() {
       <Modal>Portal</Modal>
       <PortalButton>Button in modalRoot</PortalButton>
       <PopUp /> */}
-      <UserLogin />
+      {/* <UserLogin /> */}
+      <Main />
     </div>
   );
 }

@@ -2,7 +2,7 @@ export interface ButtonInterface {
   value?: string;
   type?: any;
   children?: string;
-  onClick?(e: React.MouseEvent<HTMLButtonElement>): any;
+  onClick?(): void;
 }
 export const Button = ({ value, type, onClick, children }: ButtonInterface) => {
   return (
