@@ -76,7 +76,7 @@ function App() {
       <PopUp /> */}
       {/* <UserLogin /> */}
       {/* <Main /> */}
-      <LoginForm title={"Login Page"} uname={"name"} pwd={"pwd"} />
+      <LoginForm title={"Login Page"} uname={"js"} pwd={"js"} />
     </div>
   );
 }
