@@ -1,14 +1,19 @@
+import * as React from "react";
 import { Component } from "react";
 import { Input } from "./Input";
 import { Button } from "../Hook/Button";
+import { UserCtx } from "./context";
+import { Link } from "react-router-dom";
+import { Welcome } from "./Welcome";
+import { useHistory } from "react-router-dom";
 
-type Props = {
+export type Props = {
   title: string;
   uname?: string;
   pwd?: string;
 };
 
-type State = {
+export type State = {
   username: string;
   password: string;
 };
@@ -36,10 +41,12 @@ export class LoginForm extends Component<Props, State> {
   //   }
 
   onBtnClick = () => {
+    // let history = useHistory();
+    // history.push("/welcome");
     let { username, password } = this.state;
     let { uname, pwd } = this.props;
     if (username == uname && password == pwd) {
-      alert("You are logged in");
+      alert("You are LoggedIn");
     } else {
       alert("Incorrect Credentials");
     }
@@ -50,33 +57,48 @@ export class LoginForm extends Component<Props, State> {
   };
 
   render() {
+    let { username, password } = this.state;
+    let { uname, pwd, title } = this.props;
     return (
       <>
-        <p>{this.props.title}</p>
-        <div>
-          <label htmlFor="uname">
-            UserName:
-            <Input
-              value={this.state.username}
-              name="username"
-              onChange={this.onNameChange}
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="pswd">
-            Password:
-            <Input
-              value={this.state.password}
-              name="password"
-              onChange={this.onPwdChange}
-            />
-          </label>
-        </div>
-        <div>
-          <Button onClick={this.onBtnClick}>Log In</Button>
-          <Button onClick={this.onRefresh}>Refresh</Button>
-        </div>
+        <UserCtx.Provider value={this.state}>
+          <p>{title}</p>
+          <div>
+            <label htmlFor="uname">
+              UserName:
+              <Input
+                value={username}
+                name="username"
+                onChange={this.onNameChange}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="pswd">
+              Password:
+              <Input
+                value={password}
+                name="password"
+                onChange={this.onPwdChange}
+              />
+            </label>
+          </div>
+          <div>
+            {/* <Link to="/welcome">
+              <Button onClick={this.onBtnClick}>Log In</Button>
+            </Link> */}
+            {/* <Button onClick={this.onBtnClick}>Log In</Button> */}
+            {username == uname && password == pwd ? (
+              <Link to="/welcome">
+                <Button onClick={this.onBtnClick}>Log In</Button>
+              </Link>
+            ) : (
+              ""
+            )}
+            <Button onClick={this.onRefresh}>Refresh</Button>
+            <Welcome />
+          </div>
+        </UserCtx.Provider>
       </>
     );
   }
