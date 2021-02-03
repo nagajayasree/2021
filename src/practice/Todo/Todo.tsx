@@ -36,10 +36,18 @@ export const Todo = () => {
         >
           Add Todo
         </button>
+        <button onClick={() => setTodo("")}>Reset</button>
       </div>
       <div>
         {getTodos.map((e) => {
-          return <li key={e.value}>{e.value}</li>;
+          return (
+            <div>
+              <li key={e.value}>
+                {e.value}
+                <button>Remove</button>
+              </li>
+            </div>
+          );
         })}
       </div>
     </>
