@@ -24,7 +24,8 @@ import { Modal, PortalButton } from "./topics/portal";
 import { PopUp } from "./exercises/popUp";
 import { Main } from "./practice/Hook/Main";
 import { LoginForm } from "./practice/Classes/LoginForm";
-import {MainComp} from './practice/Classes/main'
+import { MainComp } from "./practice/Classes/main";
+import { Todo } from "./practice/Todo/Todo";
 function App() {
   return (
     <div className="App">
@@ -76,7 +77,8 @@ function App() {
       <PopUp /> */}
       {/* <UserLogin /> */}
       {/* <Main /> */}
-      <MainComp />
+      {/* <MainComp /> */}
+      <Todo />
     </div>
   );
 }
