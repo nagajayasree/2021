@@ -30,10 +30,9 @@ export const Todo = () => {
           }
         />
         <button
-          onClick={(e: React.MouseEvent<HTMLButtonElement>) => [
-            ...getTodos,
-            newtodo,
-          ]}
+          onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+            addTodo([...getTodos, { value: newtodo }])
+          }
         >
           Add Todo
         </button>
