@@ -17,7 +17,17 @@ let todos: TodoProps = {
 export const Todo = () => {
   const [newtodo, setTodo] = useState(todos.todo);
   const [getTodos, addTodo] = useState(todos.todoArr);
+  const [list, updateList] = useState(todos.todoArr);
 
+  //   const handleRemoveItem = (value) => {
+  //     updateList((list) => list.filter((i) => i.value !== value));
+  //   };
+
+  const removeItem = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log("remove");
+    let value = e.currentTarget.getAttribute("value");
+    updateList(list.filter((i) => i.value !== value));
+  };
   return (
     <>
       <div>
@@ -44,7 +54,7 @@ export const Todo = () => {
             <div>
               <li key={e.value}>
                 {e.value}
-                <button>Remove</button>
+                <button onClick={removeItem}>Remove</button>
               </li>
             </div>
           );
