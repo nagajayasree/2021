@@ -15,7 +15,7 @@ let todos: TodoProps = {
 };
 
 export const Todo = () => {
-  const [newtodo, setTodo] = useState(todos.todo);
+  const [todo, setTodo] = useState(todos.todo);
   const [getTodos, addTodo] = useState(todos.todoArr);
   const [list, updateList] = useState(todos.todoArr);
 
@@ -29,6 +29,11 @@ export const Todo = () => {
   //     updateList(list.filter((i) => i.value !== value));
   //   };
 
+  function handleAdd(e: React.MouseEvent<HTMLButtonElement>) {
+    const newList = list.concat({ value: todo });
+    addTodo(newList);
+  }
+
   function handleRemove(value: string) {
     console.log(value);
     const newList = list.filter((i) => i.value !== value);
@@ -39,7 +44,7 @@ export const Todo = () => {
       <div>
         <input
           type="text"
-          value={newtodo}
+          value={todo}
           placeholder={"Enter todo"}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setTodo(e.currentTarget.value)
@@ -47,8 +52,9 @@ export const Todo = () => {
         />
         <button
           onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-            addTodo([...getTodos, { value: newtodo }])
+            addTodo([...getTodos, { value: todo }])
           }
+          //   onClick={handleAdd} //able to add only one todo
         >
           Add Todo
         </button>
