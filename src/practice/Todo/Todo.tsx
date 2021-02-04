@@ -23,11 +23,17 @@ export const Todo = () => {
   //     updateList((list) => list.filter((i) => i.value !== value));
   //   };
 
-  const removeItem = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("remove");
-    let value = e.currentTarget.getAttribute("value");
-    updateList(list.filter((i) => i.value !== value));
-  };
+  //   const removeItem = (e: React.MouseEvent<HTMLButtonElement>) => {
+  //     console.log("remove");
+  //     let value = e.currentTarget.getAttribute("value");
+  //     updateList(list.filter((i) => i.value !== value));
+  //   };
+
+  function handleRemove(value: string) {
+    console.log(value);
+    const newList = list.filter((i) => i.value !== value);
+    updateList(newList);
+  }
   return (
     <>
       <div>
@@ -54,7 +60,9 @@ export const Todo = () => {
             <div>
               <li key={e.value}>
                 {e.value}
-                <button onClick={removeItem}>Remove</button>
+                <button type="button" onClick={() => handleRemove(e.value)}>
+                  Remove
+                </button>
               </li>
             </div>
           );
