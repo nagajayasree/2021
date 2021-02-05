@@ -26,6 +26,7 @@ import { Main } from "./practice/Hook/Main";
 import { LoginForm } from "./practice/Classes/LoginForm";
 import { MainComp } from "./practice/Classes/main";
 import { Todo } from "./practice/Todo/Todo";
+import { Calculator } from "./practice/Calculator/calculator";
 function App() {
   return (
     <div className="App">
@@ -79,6 +80,7 @@ function App() {
       {/* <Main /> */}
       {/* <MainComp /> */}
       <Todo />
+      <Calculator />
     </div>
   );
 }
