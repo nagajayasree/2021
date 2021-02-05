@@ -8,9 +8,9 @@ type TodoProps = {
 let todos: TodoProps = {
   todo: "",
   todoArr: [
-    { value: "write diary" },
-    { value: "bring veggies" },
-    { value: "code ts" },
+    // { value: "write diary" },
+    // { value: "bring veggies" },
+    // { value: "code ts" },
   ],
 };
 
