@@ -7,11 +7,7 @@ type TodoProps = {
 
 let todos: TodoProps = {
   todo: "",
-  todoArr: [
-    // { value: "write diary" },
-    // { value: "bring veggies" },
-    // { value: "code ts" },
-  ],
+  todoArr: [],
 };
 
 export const Todo = () => {
@@ -35,10 +31,10 @@ export const Todo = () => {
   //     updateList(list.filter((i) => i.value !== value));
   //   };
 
-//   function handleAdd(e: React.MouseEvent<HTMLButtonElement>) {
-//     const newList = list.concat({ value: todo });
-//     updateList(newList);
-//   }
+  //   function handleAdd(e: React.MouseEvent<HTMLButtonElement>) {
+  //     const newList = list.concat({ value: todo });
+  //     updateList(newList);
+  //   }
 
   function handleRemove(value: string) {
     console.log(value);
