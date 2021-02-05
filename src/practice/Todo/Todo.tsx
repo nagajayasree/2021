@@ -16,8 +16,14 @@ let todos: TodoProps = {
 
 export const Todo = () => {
   const [todo, setTodo] = useState(todos.todo);
-  const [getTodos, addTodo] = useState(todos.todoArr);
   const [list, updateList] = useState(todos.todoArr);
+  //   const [internalState, setInternalState] = useState(todos.todoArr);
+
+  //   const prevStateRef = useRef();
+  //   const previousState = prevStateRef.current;
+  //   if (internalState !== previousState && internalState !== internalState) {
+  //     setInternalState(internalState);
+  //   }
 
   //   const handleRemoveItem = (value) => {
   //     updateList((list) => list.filter((i) => i.value !== value));
@@ -29,16 +35,17 @@ export const Todo = () => {
   //     updateList(list.filter((i) => i.value !== value));
   //   };
 
-  function handleAdd(e: React.MouseEvent<HTMLButtonElement>) {
-    const newList = list.concat({ value: todo });
-    addTodo(newList);
-  }
+//   function handleAdd(e: React.MouseEvent<HTMLButtonElement>) {
+//     const newList = list.concat({ value: todo });
+//     updateList(newList);
+//   }
 
   function handleRemove(value: string) {
     console.log(value);
     const newList = list.filter((i) => i.value !== value);
     updateList(newList);
   }
+
   return (
     <>
       <div>
@@ -52,7 +59,7 @@ export const Todo = () => {
         />
         <button
           onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-            addTodo([...getTodos, { value: todo }])
+            updateList([...list, { value: todo }])
           }
           //   onClick={handleAdd} //able to add only one todo
         >
@@ -61,7 +68,7 @@ export const Todo = () => {
         <button onClick={() => setTodo("")}>Reset</button>
       </div>
       <div>
-        {getTodos.map((e) => {
+        {list.map((e) => {
           return (
             <div>
               <li key={e.value}>
