@@ -53,15 +53,17 @@ export const Todo = () => {
             setTodo(e.currentTarget.value)
           }
         />
-        <button
-          onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-            updateList([...list, { value: todo }])
-          }
-          //   onClick={handleAdd} //able to add only one todo
-        >
-          Add Todo
-        </button>
-        <button onClick={() => setTodo("")}>Reset</button>
+        <div>
+          <button
+            onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+              updateList([...list, { value: todo }])
+            }
+            //   onClick={handleAdd} //able to add only one todo
+          >
+            Add Todo
+          </button>
+          <button onClick={() => setTodo("")}>Reset</button>
+        </div>
       </div>
       <div>
         {list.map((e) => {
