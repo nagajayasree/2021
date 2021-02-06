@@ -3,19 +3,16 @@ import { useState } from "react";
 export interface CalciState {
   numbers: number[];
   operators: any[];
-  result: string;
 }
 
 let calState: CalciState = {
   numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
   operators: ["+", "-", "*", "/"],
-  result: "",
 };
 export const Calculator = () => {
   const [input, setInput] = useState("");
   const [signs] = useState(calState.operators);
   const [num] = useState(calState.numbers);
-  const [res] = useState(calState.result);
 
   const onButtonClick = (value: number) => {
     setInput(input + `${value.toString()}`);
