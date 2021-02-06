@@ -3,19 +3,27 @@ import { useState } from "react";
 export interface CalciState {
   numbers: number[];
   operators: any[];
+  result: string;
 }
 
-let buttons: CalciState = {
+let calState: CalciState = {
   numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
-  operators: ["+", "-", "*", "%"],
+  operators: ["+", "-", "*", "/"],
+  result: "",
 };
 export const Calculator = () => {
   const [input, setInput] = useState("");
-  const [signs] = useState(buttons.operators);
-  const [num] = useState(buttons.numbers);
+  const [signs] = useState(calState.operators);
+  const [num] = useState(calState.numbers);
+  const [res] = useState(calState.result);
 
   const onButtonClick = (value: number) => {
-    setInput(value.toString());
+    setInput(input + `${value.toString()}`);
+  };
+
+  const expr = (expr: string) => {
+    let result = eval(expr);
+    setInput(result);
   };
 
   return (
@@ -27,8 +35,10 @@ export const Calculator = () => {
           setInput(e.currentTarget.value)
         }
       />
-      <button onClick={() => setInput("")}>Reset</button>
-      <button>Result</button>
+      <div>
+        <button onClick={() => expr(input)}>Result</button>
+        <button onClick={() => setInput("")}>Reset</button>
+      </div>
       <div>
         {num.map((n) => {
           return <button onClick={() => onButtonClick(n)}>{n}</button>;
