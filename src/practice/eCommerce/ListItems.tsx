@@ -18,7 +18,7 @@ export const ItemsInfo: MainProps = {
 
 export const Items = () => {
   const [items, setItems] = useState(ItemsInfo.data);
-  
+
   return (
     <>
       {items.map((i) => {
