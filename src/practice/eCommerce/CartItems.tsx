@@ -36,7 +36,7 @@ export class CartItems extends Component<{}, CartState> {
 }
 
 export const Cart = () => {
-  const [cart] = useState(CartInfo.data);
+  const [cart, setCart] = useState(CartInfo.data);
   const [items] = useState(CartInfo.cartItems);
   return (
     <>

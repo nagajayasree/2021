@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CartInfo } from "./CartItems";
 
 export interface MainProps {
   data: {
@@ -18,14 +19,36 @@ export const ItemsInfo: MainProps = {
 
 export const Items = () => {
   const [items, setItems] = useState(ItemsInfo.data);
+  const [cart, setCart] = useState(CartInfo.cartItems);
+
+  const sendToCart = (value: string) => {
+    console.log(value);
+    const toCart = items.filter((i) => i.name == value);
+    let info = Object.values(cart).map((i) => [...cart]);
+    console.log(info);
+    return info;
+    // setCart([
+    //   ...cart,
+    //   items.map((i) => {
+    //     return { id: i.id, name: i.name };
+    //   }),
+    // ]);
+  };
 
   return (
     <>
+      List of Items
       {items.map((i) => {
         return (
           <li key={i.id}>
             {i.name}
-            <button>Add to cart</button>
+            <button
+              onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                sendToCart(i.name)
+              }
+            >
+              Add to cart
+            </button>
           </li>
         );
       })}
