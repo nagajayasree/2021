@@ -27,6 +27,7 @@ import { LoginForm } from "./practice/Classes/LoginForm";
 import { MainComp } from "./practice/Classes/main";
 import { Todo } from "./practice/Todo/Todo";
 import { Calculator } from "./practice/Calculator/calculator";
+import { Items } from "./practice/eCommerce/ListItems";
 function App() {
   return (
     <div className="App">
@@ -81,6 +82,7 @@ function App() {
       {/* <MainComp /> */}
       <Todo />
       <Calculator />
+      <Items />
     </div>
   );
 }
