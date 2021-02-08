@@ -84,8 +84,8 @@ function App() {
       {/* <MainComp /> */}
       {/* <Todo /> */}
       {/* <Calculator /> */}
-      <Items />
       {/* <Cart /> */}
+      <Items />
     </div>
   );
 }

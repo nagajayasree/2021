@@ -35,12 +35,9 @@ export const Items = () => {
         }
       />
       <button
-        // onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-        //   updateItems([...itemArr, { name: itemValue }])
-        // }
-        onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-          updateItems([...itemArr, { name: itemValue }]);
-        }}
+      // onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+      //   updateItems([...itemArr, { name: itemValue }])
+      // }
       >
         Add Item
       </button>
