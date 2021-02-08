@@ -2,11 +2,11 @@ import * as React from "react";
 import { useState } from "react";
 import { ItemCtx, MainProps } from "./eCommMain";
 
-export const Items = ({ item, data }: MainProps) => {
-  const cartContext = React.useContext(ItemCtx);
-  const [itemValue, setItem] = useState(item);
-  const [itemArr, updateItems] = useState(data);
-  const [cart, setCart] = useState(cartContext?.cartItems);
+export const Items = () => {
+  const ItemContext = React.useContext(ItemCtx);
+  const [itemValue, setItem] = useState(ItemContext?.item);
+  const [itemArr, updateItems] = useState(ItemContext?.data);
+  const [cart, setCart] = useState(ItemContext?.cartItems);
 
   // const sendToCart = (value: string) => {
   //   console.log(value);
@@ -35,31 +35,17 @@ export const Items = ({ item, data }: MainProps) => {
         }
       />
       <button
-        onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-          updateItems([...itemArr, { name: itemValue }])
-        }
+        // onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+        //   updateItems([...itemArr, { name: itemValue }])
+        // }
+        onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+          updateItems([...itemArr, { name: itemValue }]);
+        }}
       >
         Add Item
       </button>
-      <div>
-        List of Items
-        {itemArr.map((i) => {
-          return (
-            <li key={i.name}>
-              {i.name}
-              <button
-                onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-                  // sendToCart(i.name)
-                  setCart([...cart, { name: i.name }])
-                }
-              >
-                Add to cart
-              </button>
-            </li>
-          );
-        })}
-        {/* <Cart cartItems={ItemsInfo.cartItems} /> */}
-      </div>
+      <div>{itemValue}</div>
+      <div>List of Items</div>
     </>
   );
 };

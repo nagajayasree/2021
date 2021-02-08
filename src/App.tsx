@@ -29,6 +29,7 @@ import { Todo } from "./practice/Todo/Todo";
 import { Calculator } from "./practice/Calculator/calculator";
 import { Items } from "./practice/eCommerce/ListItems";
 import { Cart } from "./practice/eCommerce/CartItems";
+
 function App() {
   return (
     <div className="App">
@@ -83,7 +84,7 @@ function App() {
       {/* <MainComp /> */}
       {/* <Todo /> */}
       {/* <Calculator /> */}
-      {/* <Items /> */}
+      <Items />
       {/* <Cart /> */}
     </div>
   );

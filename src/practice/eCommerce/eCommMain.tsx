@@ -25,11 +25,15 @@ export const ItemsInfo: MainProps = {
 
 export const ItemCtx = React.createContext<MainProps | null>(null);
 
-export const eCommMain = () => {
+export const ECommMain = () => {
   <ItemCtx.Provider value={ItemsInfo}>
     <div>
-      <Items item={ItemsInfo.item} data={ItemsInfo.data} />
-      <Cart cartItems={ItemsInfo.cartItems} />
+      <Items
+      //   item={ItemsInfo.item} data={ItemsInfo.data}
+      />
+      <Cart
+      //   cartItems={ItemsInfo.cartItems}
+      />
     </div>
   </ItemCtx.Provider>;
 };

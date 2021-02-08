@@ -44,9 +44,9 @@ export const Cart = ({ cartItems }: MainProps) => {
   return (
     <>
       <div>
-        {items.map((i) => {
+        {/* {items.map((i) => {
           return <li>{i.name}</li>;
-        })}
+        })} */}
       </div>
     </>
   );
