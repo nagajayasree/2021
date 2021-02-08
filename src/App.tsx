@@ -28,7 +28,7 @@ import { MainComp } from "./practice/Classes/main";
 import { Todo } from "./practice/Todo/Todo";
 import { Calculator } from "./practice/Calculator/calculator";
 import { Items } from "./practice/eCommerce/ListItems";
-import { CartItems, Cart } from "./practice/eCommerce/CartItems";
+import { Cart } from "./practice/eCommerce/CartItems";
 function App() {
   return (
     <div className="App">
@@ -81,11 +81,10 @@ function App() {
       {/* <UserLogin /> */}
       {/* <Main /> */}
       {/* <MainComp /> */}
-      <Todo />
-      <Calculator />
-      <Items />
-      <CartItems />
-      <Cart />
+      {/* <Todo /> */}
+      {/* <Calculator /> */}
+      {/* <Items /> */}
+      {/* <Cart /> */}
     </div>
   );
 }

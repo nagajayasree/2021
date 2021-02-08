@@ -1,52 +1,53 @@
-import { Component, useState } from "react";
-import { MainProps } from "./ListItems";
+import * as React from "react";
+import { useState } from "react";
+import { ItemCtx, MainProps } from "./eCommMain";
 
-export interface CartState extends MainProps {
-  cartItems: [
-    {
-      id: number;
-      name: string;
-    }
-  ];
-}
+// export interface CartState extends MainProps {
+//   cartItems: [
+//     {
+//       name: string;
+//     }
+//   ];
+// }
 
-export const CartInfo: CartState = {
-  data: [{ id: 7, name: "item7" }],
-  cartItems: [{ id: 8, name: "item8" }],
-};
+// export const CartInfo: CartState = {
+//   item: "",
+//   data: [{ name: "item7" }],
+//   cartItems: [{ name: "item8" }],
+// };
 
-export class CartItems extends Component<{}, CartState> {
-  state: CartState = {
-    data: [{ id: 5, name: "item5" }],
-    cartItems: [{ id: 6, name: "item6" }],
-  };
-  render() {
-    return (
+// export class CartItems extends Component<{}, CartState> {
+//   state: CartState = {
+//     data: [{  name: "item5" }],
+//     cartItems: [{  name: "item6" }],
+//   };
+//   render() {
+//     return (
+//       <div>
+//         Cart Class Comp
+//         {this.state.data.map((i) => {
+//           return <li>{i.name}</li>;
+//         })}
+//         {this.state.cartItems.map((i) => {
+//           return <li>{i.name}</li>;
+//         })}
+//       </div>
+//     );
+//   }
+// }
+
+export const Cart = ({ cartItems }: MainProps) => {
+  const cartContext = React.useContext(ItemCtx);
+  const [items] = useState(cartItems);
+  //   const [cart] = useState(CartInfo.data);
+  //   const [info] = useState<any[]>(cartItems);
+  return (
+    <>
       <div>
-        Cart Class Comp
-        {this.state.data.map((i) => {
-          return <li>{i.id}</li>;
-        })}
-        {this.state.cartItems.map((i) => {
+        {items.map((i) => {
           return <li>{i.name}</li>;
         })}
       </div>
-    );
-  }
-}
-
-export const Cart = () => {
-  const [cart, setCart] = useState(CartInfo.data);
-  const [items] = useState(CartInfo.cartItems);
-  return (
-    <>
-      Cart Func Comp
-      {cart.map((i) => {
-        return <li>{i.id}</li>;
-      })}
-      {items.map((i) => {
-        return <li>{i.name}</li>;
-      })}
     </>
   );
 };
