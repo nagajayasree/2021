@@ -22,7 +22,7 @@ export const ItemsInfo: MainProps = {
     { name: "item3" },
     { name: "item4" },
   ],
-  cartItems: [],
+  cartItems: [{ name: "item4" }],
 };
 
 export const ItemCtx = React.createContext<Partial<MainProps | null>>(null);

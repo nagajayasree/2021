@@ -19,9 +19,9 @@ export const Cart = ({ cartItems }: MainProps) => {
             })
           }
         </ItemCtx.Consumer>
-        {cart?.map((i) => {
+        {/* {cart?.map((i) => {
           return <li key={i.name}>{i.name}</li>;
-        })}
+        })} */}
       </div>
     </>
   );

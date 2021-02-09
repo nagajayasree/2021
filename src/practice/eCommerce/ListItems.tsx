@@ -36,6 +36,9 @@ export const Items = ({ data, cartItems }: MainProps) => {
           })
         }
       </ItemCtx.Consumer>
+      {/* {data?.map((i) => {
+        return <li>{i.name}</li>;
+      })} */}
     </>
   );
 };
