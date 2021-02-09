@@ -1,48 +1,41 @@
 import * as React from "react";
-import { useState } from "react";
 import { ItemCtx, MainProps } from "./eCommMain";
 
-export const Items = () => {
-  const ItemContext = React.useContext(ItemCtx);
-  const [itemValue, setItem] = useState(ItemContext?.item);
-  const [itemArr, updateItems] = useState(ItemContext?.data);
-  const [cart, setCart] = useState(ItemContext?.cartItems);
-
-  // const sendToCart = (value: string) => {
-  //   console.log(value);
-  //   const toCart = items.filter((i) => i.name == value);
-  //   console.log(toCart);
-  //   let info = Object.values(cart).map((i) => [...cart]);
-  //   console.log(info);
-  //   setCart(info);
-  //   return info;
-  //   // setCart([
-  //   //   ...cart,
-  //   //   items.map((i) => {
-  //   //     return {  name: i.name };
-  //   //   }),
-  //   // ]);
-  // };
+export const Items = ({ data, cartItems }: MainProps) => {
+  const [itemName, setItem] = React.useState("");
+  const [items, updateItems] = React.useState(data);
+  const [cart, addToCart] = React.useState(cartItems);
+  const onClickAdd = (name: string) => {
+    let newItem = data?.filter((i) => i.name == name);
+    updateItems(newItem);
+    addToCart(newItem);
+    console.log(newItem);
+  };
 
   return (
     <>
       Add Item:
       <input
         type="text"
-        value={itemValue}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setItem(e.currentTarget.value)
-        }
+        value={itemName}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+          setItem(e.currentTarget.value);
+        }}
       />
-      <button
-      // onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-      //   updateItems([...itemArr, { name: itemValue }])
-      // }
-      >
-        Add Item
-      </button>
-      <div>{itemValue}</div>
+      <button>Add Item</button>
       <div>List of Items</div>
+      <ItemCtx.Consumer>
+        {(ItemsInfo) =>
+          ItemsInfo?.data?.map((i) => {
+            return (
+              <div>
+                <li key={i.name}>{i.name}</li>
+                <button onClick={() => onClickAdd(i.name)}>Add to Cart</button>
+              </div>
+            );
+          })
+        }
+      </ItemCtx.Consumer>
     </>
   );
 };

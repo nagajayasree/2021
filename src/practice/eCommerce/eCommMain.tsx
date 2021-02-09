@@ -4,12 +4,14 @@ import { Cart } from "./CartItems";
 
 export interface MainProps {
   item?: string;
+  //   data: string[];
   data?: {
     name: string;
   }[];
   cartItems?: {
     name: string;
   }[];
+  //   [Symbol.iterator]?: () => void;
 }
 
 export const ItemsInfo: MainProps = {
@@ -23,17 +25,15 @@ export const ItemsInfo: MainProps = {
   cartItems: [],
 };
 
-export const ItemCtx = React.createContext<MainProps | null>(null);
+export const ItemCtx = React.createContext<Partial<MainProps | null>>(null);
 
 export const ECommMain = () => {
-  <ItemCtx.Provider value={ItemsInfo}>
-    <div>
-      <Items
-      //   item={ItemsInfo.item} data={ItemsInfo.data}
-      />
-      <Cart
-      //   cartItems={ItemsInfo.cartItems}
-      />
-    </div>
-  </ItemCtx.Provider>;
+  return (
+    <ItemCtx.Provider value={ItemsInfo}>
+      <div>
+        <Items data={ItemsInfo.data} cartItems={ItemsInfo.cartItems} />
+        <Cart cartItems={ItemsInfo.cartItems} />
+      </div>
+    </ItemCtx.Provider>
+  );
 };
