@@ -4,7 +4,7 @@ import { Cart } from "./CartItems";
 
 export interface MainProps {
   item?: string;
-  data?: {
+  listItems?: {
     name: string;
   }[];
   cartItems?: {
@@ -16,7 +16,7 @@ export interface MainProps {
 
 export const ItemsInfo: MainProps = {
   item: "",
-  data: [
+  listItems: [
     { name: "item1" },
     { name: "item2" },
     { name: "item3" },
@@ -29,18 +29,24 @@ export const ItemCtx = React.createContext<MainProps | null>(null);
 
 export const ECommMain = () => {
   const [itemName, setItem] = React.useState(ItemsInfo.item);
-  const [items, setItems] = React.useState(ItemsInfo.data);
+  const [items, setItems] = React.useState(ItemsInfo.listItems);
   const [cart, setCart] = React.useState(ItemsInfo.cartItems);
   const setInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setItem(e.currentTarget.value);
   };
   return (
-    <ItemCtx.Provider value={{}}>
-      <div>
-        <Items item={itemName} data={items} />
-        <hr />
-        <Cart cartItems={cart} />
-      </div>
-    </ItemCtx.Provider>
+    <>
+      Add Item:
+      <input type="text" value={itemName} onChange={setInput} />
+      <button>Add Item</button>
+      <div>List of Items</div>
+      <ItemCtx.Provider value={{}}>
+        <div>
+          <Items listItems={items} />
+          <hr />
+          <Cart cartItems={cart} />
+        </div>
+      </ItemCtx.Provider>
+    </>
   );
 };

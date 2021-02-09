@@ -1,8 +1,7 @@
-import * as React from "react";
-import { ItemCtx, ItemsInfo, MainProps } from "./eCommMain";
+import { MainProps } from "./eCommMain";
 
-export const Items = ({ data, item }: MainProps) => {
-  const Data = React.useContext(ItemCtx);
+export const Items = ({ listItems }: MainProps) => {
+  // const Data = React.useContext(ItemCtx);
   // const [itemName, setItem] = React.useState(ItemsInfo.item);
   // const [items, updateItems] = React.useState(data);
   // const [cart, addToCart] = React.useState(cartItems);
@@ -15,10 +14,6 @@ export const Items = ({ data, item }: MainProps) => {
 
   return (
     <>
-      Add Item:
-      <input type="text" value={item} />
-      <button>Add Item</button>
-      <div>List of Items</div>
       {/* cannot use consumer,bcoz value is not provided in provider*/}
       {/* <ItemCtx.Consumer>
         {(ItemsInfo) =>
@@ -32,10 +27,10 @@ export const Items = ({ data, item }: MainProps) => {
           })
         }
       </ItemCtx.Consumer> */}
-      {data?.map((i) => {
+      {listItems?.map((i) => {
         return (
           <div>
-            <li>{i.name}</li>
+            <li key={i.name}>{i.name}</li>
             <button>Add to Cart</button>
           </div>
         );

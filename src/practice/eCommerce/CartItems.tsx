@@ -1,5 +1,3 @@
-import * as React from "react";
-import { useState } from "react";
 import { MainProps } from "./eCommMain";
 
 export const Cart = ({ cartItems }: MainProps) => {
