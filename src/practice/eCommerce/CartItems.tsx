@@ -1,13 +1,14 @@
 import * as React from "react";
 import { useState } from "react";
-import { ItemCtx, MainProps } from "./eCommMain";
+import { MainProps } from "./eCommMain";
 
 export const Cart = ({ cartItems }: MainProps) => {
-  const [cart] = useState(cartItems);
+  //   const [cart] = useState(cartItems);
   return (
     <>
       <div>
-        <ItemCtx.Consumer>
+        {/* cannot use consumer,bcoz value is not provided in provider */}
+        {/* <ItemCtx.Consumer>
           {(ItemsInfo) =>
             ItemsInfo?.cartItems?.map((i) => {
               return (
@@ -18,10 +19,11 @@ export const Cart = ({ cartItems }: MainProps) => {
               );
             })
           }
-        </ItemCtx.Consumer>
-        {/* {cart?.map((i) => {
+        </ItemCtx.Consumer> */}
+        <p>Items Added to Cart</p>
+        {cartItems?.map((i) => {
           return <li key={i.name}>{i.name}</li>;
-        })} */}
+        })}
       </div>
     </>
   );
