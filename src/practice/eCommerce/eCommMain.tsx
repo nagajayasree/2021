@@ -45,7 +45,12 @@ export const ECommMain = () => {
         name: itemName,
       };
     });
-    console.log(newItem);
+    newArr.push(newItem);
+    console.log(newArr);
+    // items?.push(newArr);
+    // let res = items?.push(...newArr);
+    // setItems(items?.push(...Object.values(newArr)));
+    // setItems(newArr);
   };
 
   return (
