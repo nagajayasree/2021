@@ -1,26 +1,23 @@
 import { MainProps } from "./eCommMain";
-
+import { useState } from "react";
 export const Cart = ({ cartItems }: MainProps) => {
-  //   const [cart] = useState(cartItems);
+  const [cart, updateCart] = useState(cartItems);
+  function removeItem(name: string) {
+    const resetItems = cart?.filter((i) => i.name !== name);
+    console.log(resetItems);
+    updateCart(resetItems);
+  }
   return (
     <>
       <div>
-        {/* cannot use consumer,bcoz value is not provided in provider */}
-        {/* <ItemCtx.Consumer>
-          {(ItemsInfo) =>
-            ItemsInfo?.cartItems?.map((i) => {
-              return (
-                <div>
-                  <li key={i.name}>{i.name}</li>
-                  <button>Remove</button>
-                </div>
-              );
-            })
-          }
-        </ItemCtx.Consumer> */}
         <p>Items Added to Cart</p>
-        {cartItems?.map((i) => {
-          return <li key={i.name}>{i.name}</li>;
+        {cart?.map((i) => {
+          return (
+            <div>
+              <li key={i.name}>{i.name}</li>
+              <button onClick={() => removeItem(i.name)}>Remove</button>
+            </div>
+          );
         })}
       </div>
     </>
