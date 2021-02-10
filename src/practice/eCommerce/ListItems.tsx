@@ -1,6 +1,6 @@
 import { MainProps } from "./eCommMain";
 
-export const Items = ({ listItems }: MainProps) => {
+export const Items = ({ itemsList }: MainProps) => {
   // const Data = React.useContext(ItemCtx);
   // const [itemName, setItem] = React.useState(ItemsInfo.item);
   // const [items, updateItems] = React.useState(data);
@@ -27,7 +27,7 @@ export const Items = ({ listItems }: MainProps) => {
           })
         }
       </ItemCtx.Consumer> */}
-      {listItems?.map((i) => {
+      {itemsList?.map((i) => {
         return (
           <div>
             <li key={i.name}>{i.name}</li>
