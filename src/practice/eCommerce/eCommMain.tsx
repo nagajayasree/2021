@@ -3,6 +3,7 @@ import { Items } from "./ListItems";
 import { Cart } from "./CartItems";
 
 export interface MainProps {
+  name?: string;
   item?: string;
   itemsList?: {
     name: string;
@@ -10,6 +11,7 @@ export interface MainProps {
   cartItems?: {
     name: string;
   }[];
+  newData?: {}[];
   setInput?: () => void;
   addItem?: () => void;
   //   removeItem?: () => void;
@@ -31,23 +33,26 @@ export const ItemsInfo: MainProps = {
 export const ItemCtx = React.createContext<MainProps | null>(null);
 
 export const ECommMain = () => {
-  const [itemName, setItem] = React.useState(ItemsInfo.item);
+  //   function addItem(name: string) {
+  //     let newData = {} as MainProps;
+  //     newData.name = name as string;
+  //     console.log(newData);
+  //     return newData;
+  //   }
 
-  function addItem(name: string) {
-    let newArr = [{}];
-    const newItem = newArr.map((i) => {
-      return {
-        ...i,
-        name: itemName,
-      };
-    });
-    newArr.push(newItem);
-    console.log(newArr);
-    // updateItems(newArr);
-    // items?.push(newArr);
-    // let res = items?.push(...newArr);
-    // setItems(items?.push(...Object.values(newArr)));
-  }
+  //   let newArr = [];
+  // const newItem = newArr.map((i) => {
+  //   return {
+  //     ...i,
+  //     name: itemName,
+  //   };
+  // });
+  // newArr.push(newItem);
+  // console.log(newArr);
+  // updateItems(newArr);
+  // items?.push(newArr);
+  // let res = items?.push(...newArr);
+  // setItems(items?.push(...Object.values(newArr)));
   //   const addItem = () => {
   //     let newArr = [{}];
   //     const newItem = newArr.map((i) => {
@@ -73,18 +78,10 @@ export const ECommMain = () => {
 
   return (
     <>
-      Add Item:
-      <input
-        type="text"
-        value={itemName}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-          setItem(e.currentTarget.value);
-        }}
-      />
-      <button>Add Item</button>
       <ItemCtx.Provider value={{}}>
         <div>
           <Items
+            item={ItemsInfo.item}
             itemsList={ItemsInfo.itemsList}
             cartItems={ItemsInfo.cartItems}
           />
