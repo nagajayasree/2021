@@ -31,8 +31,23 @@ export const ItemsInfo: MainProps = {
 export const ItemCtx = React.createContext<MainProps | null>(null);
 
 export const ECommMain = () => {
-  const [itemName] = React.useState(ItemsInfo.item);
+  const [itemName, setItem] = React.useState(ItemsInfo.item);
 
+  function addItem(name: string) {
+    let newArr = [{}];
+    const newItem = newArr.map((i) => {
+      return {
+        ...i,
+        name: itemName,
+      };
+    });
+    newArr.push(newItem);
+    console.log(newArr);
+    // updateItems(newArr);
+    // items?.push(newArr);
+    // let res = items?.push(...newArr);
+    // setItems(items?.push(...Object.values(newArr)));
+  }
   //   const addItem = () => {
   //     let newArr = [{}];
   //     const newItem = newArr.map((i) => {
@@ -58,10 +73,18 @@ export const ECommMain = () => {
 
   return (
     <>
+      Add Item:
+      <input
+        type="text"
+        value={itemName}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+          setItem(e.currentTarget.value);
+        }}
+      />
+      <button>Add Item</button>
       <ItemCtx.Provider value={{}}>
         <div>
           <Items
-            item={itemName}
             itemsList={ItemsInfo.itemsList}
             cartItems={ItemsInfo.cartItems}
           />
