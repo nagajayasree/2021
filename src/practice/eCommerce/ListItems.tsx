@@ -14,17 +14,56 @@ export const Items = ({ item, itemsList, cartItems }: MainProps) => {
     }
     console.log(newData);
 
+    // let combine = items?.concat(newData);
+    // const combine = items?.push(...newData);
+
+    // let combined1 = [].concat(items, newData);
+    // let combined2 = [...items, ...newData];
+
     //able to concate items with items and display them by updating
-    updateItems(items?.concat([...new Set(items)]));
-    let newArr = items?.concat([...new Set(items)]);
-    console.log(newArr);
+    // updateItems(items?.concat([...new Set(items)]));
+    // let newArr = items?.concat([...new Set(items)]);
+    // console.log(newArr);
+
     // let newArr = [...new Set(items?.map(({ name }) => name))].map((i) =>
     //   items?.find(({ name }) => name == i)
     // );
     // console.log(newArr);
     // updateItems(newArr);
-    return newData;
+    // return newData;
+
+    // const merge = (a1: { name: string }[], a2: { name: string }[]) => {
+    //   a1.map((itm) => ({
+    //     ...a2.find((item) => item.name === itm.name && item),
+    //     ...itm,
+    //   }));
+    // };
+    // let getItems = items as MainProps;
+    // console.log(merge(getItems, newData));
+
+    const mergedArr = items?.map(() => {
+      const found = newData.name;
+      return { ...items, found };
+    });
+
+    console.log(mergedArr);
+    //   items?.forEach((it) => {
+    //     let find: any = newData.find((i) => {
+    //       return it.name === i.name;
+    //     });
+    //     if (find) mergedArr.push(Object.assign({}, it, find));
+    //   });
+    //   console.log(mergedArr);
+    // }
+
+    // function combineArrays(arr1: number[], arr2: number[]) {
+    //   return [...arr1, ...arr2];
+    // }
+    // let a1 = [1, 2, 3],
+    //   a2 = [1, 2, 3];
+    // console.log(combineArrays(a1, a2));
   }
+
   function addToCart(name: string) {
     let newItem = items?.filter((i) => i.name === name);
     updateCart(newItem);

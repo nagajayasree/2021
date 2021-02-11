@@ -11,7 +11,7 @@ export interface MainProps {
   cartItems?: {
     name: string;
   }[];
-  newData?: {}[];
+  newData?: { name: string }[];
   setInput?: () => void;
   addItem?: () => void;
   //   removeItem?: () => void;
