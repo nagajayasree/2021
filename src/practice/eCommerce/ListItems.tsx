@@ -45,8 +45,8 @@ export const Items = ({ item, itemsList, cartItems }: MainProps) => {
       const found = newData.name;
       return { ...items, found };
     });
-
     console.log(mergedArr);
+
     //   items?.forEach((it) => {
     //     let find: any = newData.find((i) => {
     //       return it.name === i.name;

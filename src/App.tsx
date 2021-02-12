@@ -30,6 +30,7 @@ import { Calculator } from "./practice/Calculator/calculator";
 import { Items } from "./practice/eCommerce/ListItems";
 import { Cart } from "./practice/eCommerce/CartItems";
 import { ECommMain } from "./practice/eCommerce/eCommMain";
+import Quiz from "./practice/Quiz/quiz";
 
 function App() {
   return (
@@ -86,7 +87,8 @@ function App() {
       {/* <Todo /> */}
       {/* <Calculator /> */}
       {/* <Cart /> */}
-      <ECommMain />
+      {/* <ECommMain /> */}
+      <Quiz title={"Quizz App "} />
     </div>
   );
 }
