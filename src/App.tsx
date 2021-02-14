@@ -88,7 +88,7 @@ function App() {
       {/* <Calculator /> */}
       {/* <Cart /> */}
       {/* <ECommMain /> */}
-      <Quiz title={"Quizz App "} />
+      <Quiz title={"Quizz App"} />
     </div>
   );
 }
