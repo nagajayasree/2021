@@ -111,9 +111,10 @@ class Quiz extends React.Component<QuizProps, QuizState> {
 
   getQuestions = () => {
     let arr = this.state.quesArr;
+    let limit = 5;
     // console.log(arr[Math.floor(Math.random() * arr.length)]);
-    const shuffled = arr.sort(() => 0.5 - Math.random()).slice(0, 5);
-    console.log(shuffled);
+    const shuffled = arr.sort(() => 0.5 - Math.random()).slice(0, limit);
+    // console.log(shuffled);
     this.setState({ quesArr: shuffled });
     // return shuffled;
   };
@@ -153,7 +154,6 @@ class Quiz extends React.Component<QuizProps, QuizState> {
     return (
       <>
         {this.props.title}
-
         {/* <p>
           <button onClick={this.getQuestions}>random</button>
         </p> */}
