@@ -154,10 +154,6 @@ class Quiz extends React.Component<QuizProps, QuizState> {
     return (
       <>
         {this.props.title}
-        {/* <p>
-          <button onClick={this.getQuestions}>random</button>
-        </p> */}
-        {/* <p>Score:{this.state.score}</p> */}
         <p>Attempts:{this.state.attempts}</p>
         <div>
           {this.state.quesArr.map((i) => {
@@ -190,11 +186,7 @@ class Quiz extends React.Component<QuizProps, QuizState> {
             );
           })}
         </div>
-        {this.state.attempts == 5 ? (
-          <p>Score:You Scored {this.state.score}/5</p>
-        ) : (
-          ""
-        )}
+        {this.state.attempts == 5 ? <p>You Scored {this.state.score}/5</p> : ""}
         <button onClick={this.playAgain}>Play Again</button>
       </>
     );
