@@ -31,6 +31,7 @@ import { Items } from "./practice/eCommerce/ListItems";
 import { Cart } from "./practice/eCommerce/CartItems";
 import { ECommMain } from "./practice/eCommerce/eCommMain";
 import Quiz from "./practice/Quiz/quiz";
+import { RecipesInfo } from "./practice/RecipeBook/Recipes";
 
 function App() {
   return (
@@ -88,7 +89,8 @@ function App() {
       {/* <Calculator /> */}
       {/* <Cart /> */}
       {/* <ECommMain /> */}
-      <Quiz title={"Quizz App"} />
+      {/* <Quiz title={"Quizz App"} /> */}
+      <RecipesInfo />
     </div>
   );
 }
