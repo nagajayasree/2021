@@ -1,5 +1,5 @@
-import { Component } from "react";
-import { recipeArr } from "./recipeBook";
+import { useContext } from "react";
+import { recipeArr, RecipeCtx } from "./recipesBook";
 import { Card } from "react-bootstrap";
 import CSS from "csstype";
 
@@ -16,19 +16,17 @@ const titleStyle: CSS.Properties = {
 };
 
 const textStyle: CSS.Properties = {
-  textAlign: 'center' && 'justify',
+  textAlign: "center" && "justify",
 };
 
-export class RecipesInfo extends Component {
-  state = {
-    recipeArr,
-  };
-  render() {
-    return (
-      <div>
-        {this.state.recipeArr.book.map((i) => {
-          return (
-            <Card border="primary" style={cardStyles}>
+export const RecipesInfo = () => {
+  const recipeCtxt = useContext(RecipeCtx);
+  return (
+    <div>
+      {recipeCtxt?.book.map((i) => {
+        return (
+          <div>
+            <Card style={cardStyles}>
               <Card.Body>
                 <div>
                   <Card.Title style={titleStyle}>
@@ -51,9 +49,9 @@ export class RecipesInfo extends Component {
                 </div>
               </Card.Body>
             </Card>
-          );
-        })}
-      </div>
-    );
-  }
-}
+          </div>
+        );
+      })}
+    </div>
+  );
+};

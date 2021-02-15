@@ -1,11 +1,14 @@
-export interface RecipeState {
+import { createContext } from "react";
+import { RecipesInfo } from "./RecipesInfo";
+
+export interface RecipeInterface {
   book: {
     recipe: string;
     making: { step1: string; step2: string; step3: string }[];
   }[];
 }
 
-export let recipeArr: RecipeState = {
+export let recipeArr: RecipeInterface = {
   book: [
     {
       recipe: "Paneer Mix Veg Recipe",
@@ -35,3 +38,11 @@ export let recipeArr: RecipeState = {
     },
   ],
 };
+
+export const RecipeCtx = createContext<RecipeInterface | null>(null);
+
+export const Recipe = () => (
+  <RecipeCtx.Provider value={recipeArr}>
+    <RecipesInfo />
+  </RecipeCtx.Provider>
+);
