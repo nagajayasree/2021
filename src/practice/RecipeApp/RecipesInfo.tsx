@@ -1,21 +1,21 @@
 import { useContext } from "react";
-import { recipeArr, RecipeCtx } from "./recipesBook";
+import { RecipeCtx } from "./RecipeApp";
 import { Card } from "react-bootstrap";
 import CSS from "csstype";
 
-const cardStyles: CSS.Properties = {
+export const cardStyle: CSS.Properties = {
   position: "relative",
   margin: "40px",
   width: "35rem",
   marginLeft: "25rem",
 };
 
-const titleStyle: CSS.Properties = {
+export const titleStyle: CSS.Properties = {
   fontFamily: "revert",
-  fontSize: "small",
+  fontSize: "20px",
 };
 
-const textStyle: CSS.Properties = {
+export const textStyle: CSS.Properties = {
   textAlign: "center" && "justify",
 };
 
@@ -26,11 +26,11 @@ export const RecipesInfo = () => {
       {recipeCtxt?.book.map((i) => {
         return (
           <div>
-            <Card style={cardStyles}>
+            <Card style={cardStyle}>
               <Card.Body>
                 <div>
                   <Card.Title style={titleStyle}>
-                    <h2>{i.recipe}</h2>
+                    <h2>{i.recipeName}</h2>
                   </Card.Title>
                   <Card.Text style={textStyle}>
                     {i.making.map((i) => {

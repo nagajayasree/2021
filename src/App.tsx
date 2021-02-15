@@ -32,7 +32,7 @@ import { Cart } from "./practice/eCommerce/CartItems";
 import { ECommMain } from "./practice/eCommerce/eCommMain";
 import Quiz from "./practice/Quiz/quiz";
 import { RecipesInfo } from "./practice/RecipeApp/RecipesInfo";
-import { Recipe } from "./practice/RecipeApp/recipesBook";
+import { RecipeApp } from "./practice/RecipeApp/RecipeApp";
 
 function App() {
   return (
@@ -92,7 +92,7 @@ function App() {
       {/* <ECommMain /> */}
       {/* <Quiz title={"Quizz App"} /> */}
       {/* <RecipesInfo /> */}
-      <Recipe />
+      <RecipeApp />
     </div>
   );
 }
