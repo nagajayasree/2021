@@ -1,4 +1,5 @@
-import { useContext } from "react";
+import { Component } from "react";
+import { RecipeInterface } from "./recipesBook";
 import { RecipeCtx } from "./RecipeApp";
 import { Card } from "react-bootstrap";
 import CSS from "csstype";
@@ -19,39 +20,51 @@ export const textStyle: CSS.Properties = {
   textAlign: "center" && "justify",
 };
 
-export const RecipesInfo = () => {
-  const recipeCtxt = useContext(RecipeCtx);
-  return (
-    <div>
-      {recipeCtxt?.book.map((i) => {
-        return (
-          <div>
-            <Card style={cardStyle}>
-              <Card.Body>
-                <div>
-                  <Card.Title style={titleStyle}>
-                    <h2>{i.recipeName}</h2>
-                  </Card.Title>
-                  <Card.Text style={textStyle}>
-                    {i.making.map((i) => {
-                      return (
+export class RecipesInfo extends Component<{}, RecipeInterface> {
+  constructor(props: RecipeInterface) {
+    super(props);
+    this.state = {
+      book: [],
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <RecipeCtx.Consumer>
+          {(value) => (
+            <div>
+              {value?.book.map((i) => {
+                return (
+                  <div>
+                    <Card style={cardStyle}>
+                      <Card.Title style={titleStyle}>
+                        <p key={i.id}>{i.recipeName}</p>
+                      </Card.Title>
+                      <Card.Body>
                         <div>
-                          <h6>Step1:</h6>
-                          <p>{i.step1}</p>
-                          <h6>Step2:</h6>
-                          <p>{i.step2}</p>
-                          <h6>Step3:</h6>
-                          <p>{i.step3}</p>
+                          {i.making.map((i) => {
+                            return (
+                              <div>
+                                <h6>Step1:</h6>
+                                <p>{i.step1}</p>
+                                <h6>Step2:</h6>
+                                <p>{i.step2}</p>
+                                <h6>Step3:</h6>
+                                <p>{i.step3}</p>
+                              </div>
+                            );
+                          })}
                         </div>
-                      );
-                    })}
-                  </Card.Text>
-                </div>
-              </Card.Body>
-            </Card>
-          </div>
-        );
-      })}
-    </div>
-  );
-};
+                      </Card.Body>
+                    </Card>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </RecipeCtx.Consumer>
+      </div>
+    );
+  }
+}

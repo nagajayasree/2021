@@ -2,6 +2,7 @@ export interface RecipeInterface {
   book: {
     recipeName: string;
     making: { step1: string; step2: string; step3: string }[];
+    id: number;
   }[];
 }
 
@@ -19,6 +20,7 @@ export let recipeArr: RecipeInterface = {
             "Finally add paneer cubes and tomato ketchup. Mix well.Add garam masala, cover the lid and cook for 2 minutes.Once done, you can garnish with coriander leaves and serve.",
         },
       ],
+      id: 1,
     },
     {
       recipeName: "Instant Chatpati Bhel Recipe",
@@ -32,7 +34,7 @@ export let recipeArr: RecipeInterface = {
             "Mix well all the ingredients once again.Then, wash the coriander leaves and finely chop them. Add them to the bowl of sev and puffed rice.Mix once again.In the last, add pomegranate seeds and mix it well. Serve immediately.",
         },
       ],
+      id: 2,
     },
   ],
 };
-
