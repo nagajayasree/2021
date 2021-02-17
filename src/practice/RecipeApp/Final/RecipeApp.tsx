@@ -1,5 +1,4 @@
 import { createContext } from "react";
-import { Nav, Navbar } from "react-bootstrap";
 import { Recipes } from "./Recipes";
 import { recipeArr, RecipeInterface } from "./recipesBook";
 import { BrowserRouter as Router } from "react-router-dom";
