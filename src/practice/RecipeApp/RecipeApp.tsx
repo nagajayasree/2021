@@ -12,15 +12,8 @@ export const RecipeApp = () => (
   <Router>
     <div>
       <RecipeCtx.Provider value={recipeArr}>
-        <NavBar />
+        {/* <NavBar /> */}
         <RecipesList />
-        {/* <Route path="/home" component={RecipesList} /> */}
-        {/* <Route path="/home">
-          <RecipesList />
-        </Route> */}
-        {/* <Route path="/recipes/:id" component={RecipesInfo} /> */}
-        {/* <Route path="/recipes/:id" component={RecipesInfo} /> */}
-        {/* <RecipesInfo /> */}
       </RecipeCtx.Provider>
     </div>
   </Router>

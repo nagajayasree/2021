@@ -1,9 +1,14 @@
-import { Component } from "react";
-import { RecipeInterface } from "./recipesBook";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { RecipesList } from "./RecipesList";
 
-export class RecipeDetails extends Component<RecipeInterface, RecipeInterface> {
-  render() {
-    let selectedCardId = localStorage.getItem("selected");
-    return <div>selectedCardId</div>;
-  }
-}
+export const RecipeDetails = ({ match }: any) => {
+  return (
+    <Router>
+      <>
+        <h3>{match.params.recipeName}</h3>
+        {/* <p>{match.params.id}</p> */}
+        {/* <p>{match.params.steps}</p> */}
+      </>
+    </Router>
+  );
+};

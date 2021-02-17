@@ -2,23 +2,7 @@ import { Component } from "react";
 import { RecipeInterface } from "./recipesBook";
 import { RecipeCtx } from "./RecipeApp";
 import { Card } from "react-bootstrap";
-import CSS from "csstype";
-
-export const cardStyle: CSS.Properties = {
-  position: "relative",
-  margin: "40px",
-  width: "35rem",
-  marginLeft: "25rem",
-};
-
-export const titleStyle: CSS.Properties = {
-  fontFamily: "revert",
-  fontSize: "20px",
-};
-
-export const textStyle: CSS.Properties = {
-  textAlign: "center" && "justify",
-};
+import { cardStyle, titleStyle } from "./RecipesList";
 
 export class RecipesInfo extends Component<{}, RecipeInterface> {
   constructor(props: RecipeInterface) {
@@ -43,7 +27,7 @@ export class RecipesInfo extends Component<{}, RecipeInterface> {
                       </Card.Title>
                       <Card.Body>
                         <div>
-                          {i.making.map((i) => {
+                          {i.steps.map((i) => {
                             return (
                               <div>
                                 <h6>Step1:</h6>

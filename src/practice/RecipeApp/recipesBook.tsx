@@ -1,7 +1,7 @@
 export interface RecipeInterface {
   book: {
     recipeName: string;
-    making: { step1: string; step2: string; step3: string }[];
+    steps: { step1: string; step2: string; step3: string }[];
     id: number;
   }[];
 }
@@ -10,7 +10,7 @@ export let recipeArr: RecipeInterface = {
   book: [
     {
       recipeName: "Paneer Mix Veg Recipe",
-      making: [
+      steps: [
         {
           step1:
             "Slice veggies diagonally or as per your choice. Cut paneer into cubes and set aside.Heat oil in a pan, add all the veggies and sauté for a few minutes.",
@@ -24,7 +24,7 @@ export let recipeArr: RecipeInterface = {
     },
     {
       recipeName: "Instant Chatpati Bhel Recipe",
-      making: [
+      steps: [
         {
           step1:
             "To prepare this delicious dish, peel the onion and finely chop it in a large bowl.Next, finely chop the green chilli and add to the bowl of onions.Then, add salt in the same bowl.",
