@@ -1,10 +1,10 @@
 import { createContext } from "react";
 import { Nav, Navbar } from "react-bootstrap";
-import { RecipesList } from "./RecipesList";
+import { Recipes } from "./Recipes";
 import { recipeArr, RecipeInterface } from "./recipesBook";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-import { RecipesInfo } from "./RecipesInfo";
-import { NavBar } from "./NavBar";
+import { BrowserRouter as Router } from "react-router-dom";
+import { RecipesList } from "../RecipesList";
+import { NavBar } from "../NavBar";
 
 export const RecipeCtx = createContext<RecipeInterface | null>(null);
 
@@ -13,7 +13,8 @@ export const RecipeApp = () => (
     <div>
       <RecipeCtx.Provider value={recipeArr}>
         {/* <NavBar /> */}
-        <RecipesList />
+        {/* <RecipesList /> */}
+        <Recipes />
       </RecipeCtx.Provider>
     </div>
   </Router>

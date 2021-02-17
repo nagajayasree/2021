@@ -31,7 +31,7 @@ import { Items } from "./practice/eCommerce/ListItems";
 import { Cart } from "./practice/eCommerce/CartItems";
 import { ECommMain } from "./practice/eCommerce/eCommMain";
 import Quiz from "./practice/Quiz/quiz";
-import { RecipeApp } from "./practice/RecipeApp/RecipeApp";
+import { RecipeApp } from "./practice/RecipeApp/Final/RecipeApp";
 
 function App() {
   return (

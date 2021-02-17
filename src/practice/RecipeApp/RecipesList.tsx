@@ -1,7 +1,7 @@
 import { Component } from "react";
-import { RecipeCtx } from "./RecipeApp";
+import { RecipeCtx } from "./Final/RecipeApp";
 import { Card } from "react-bootstrap";
-import { RecipeInterface } from "./recipesBook";
+import { RecipeInterface } from "./Final/recipesBook";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { RecipeDetails } from "./RecipeDetails";
 import CSS from "csstype";

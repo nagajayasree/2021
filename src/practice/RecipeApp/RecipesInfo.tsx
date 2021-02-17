@@ -1,6 +1,6 @@
 import { Component } from "react";
-import { RecipeInterface } from "./recipesBook";
-import { RecipeCtx } from "./RecipeApp";
+import { RecipeInterface } from "./Final/recipesBook";
+import { RecipeCtx } from "./Final/RecipeApp";
 import { Card } from "react-bootstrap";
 import { cardStyle, titleStyle } from "./RecipesList";
 
